@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply font-body text-slate-950 antialiased;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d8d5cb transparent;
+}
+
+.font-tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+.input {
+  @apply w-full rounded border border-slate-200 bg-paper px-3 py-2 text-sm text-slate-950 outline-none transition-colors focus:border-ink;
+}
+
+/* Signature element: rubber-stamp status badges instead of generic pills */
+.stamp {
+  @apply inline-flex items-center gap-1 rounded border px-2 py-0.5 text-[11px] font-mono font-semibold uppercase tracking-wide;
+  transform: rotate(-1.5deg);
+}
+
+:focus-visible {
+  outline: 2px solid #e8a33d;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
